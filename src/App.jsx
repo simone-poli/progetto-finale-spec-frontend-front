@@ -1,12 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import DeviceList from "./pages/DeviceList"
 import SingleDevicePage from "./pages/SingleDevicePage"
+import { GlobalProvider } from "./context/GlobalContext"
 
 function App() {
 
 
   return (
     <>
+    <GlobalProvider>
+     
       <BrowserRouter>
         <Routes>
 
@@ -19,6 +22,8 @@ function App() {
 
         </Routes>
       </BrowserRouter>
+
+    </GlobalProvider>
     </>
   )
 }
