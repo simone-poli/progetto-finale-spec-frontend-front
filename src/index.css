@@ -1,0 +1,67 @@
+.list-devices {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding: 60px 20px;
+    min-height: 100vh;
+    background-color: #f0f2f5; 
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.list-devices table {
+    border-collapse: separate; 
+    border-spacing: 0;
+    width: 90%;
+    max-width: 900px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.list-devices thead {
+    background: linear-gradient(90deg, #4CAF50, #2E7D32);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.list-devices th, 
+.list-devices td {
+    padding: 14px 24px;
+    text-align: left;
+}
+
+.list-devices tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: transform 0.2s, background-color 0.2s;
+    cursor: default;
+}
+
+.list-devices tbody tr:hover {
+    background-color: #f9f9f9;
+    transform: translateX(4px); 
+}
+
+.list-devices td {
+    color: #333;
+    font-size: 15px;
+}
+
+
+.list-devices tbody tr:first-child td:first-child {
+    border-top-left-radius: 12px;
+}
+.list-devices tbody tr:first-child td:last-child {
+    border-top-right-radius: 12px;
+}
+.list-devices tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+.list-devices tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+
