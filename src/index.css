@@ -1,18 +1,45 @@
 .list-devices {
     display: flex;
-    justify-content: center;
-    align-items: flex-start; 
+    flex-direction: column;
+    align-items: center;
     padding: 60px 20px;
     min-height: 100vh;
-    background-color: #f0f2f5; 
+    background-color: #f0f2f5;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.list-devices .filters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 20px;
+}
+
+.list-devices .filters input,
+.list-devices .filters select {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s;
+}
+
+.list-devices .filters input:focus,
+.list-devices .filters select:focus {
+    border-color: #4caf50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
 .list-devices table {
-    border-collapse: separate; 
+    border-collapse: separate;
     border-spacing: 0;
-    width: 90%;
+    width: 100%;
     max-width: 900px;
     background-color: #ffffff;
     border-radius: 12px;
@@ -28,28 +55,33 @@
     font-weight: 600;
 }
 
-.list-devices th, 
+.list-devices th,
 .list-devices td {
     padding: 14px 24px;
     text-align: left;
 }
 
+.list-devices th {
+    user-select: none;
+}
+.list-devices th:hover {
+    opacity: 0.8;
+}
+
 .list-devices tbody tr {
     border-bottom: 1px solid #eee;
     transition: transform 0.2s, background-color 0.2s;
-    cursor: default;
 }
 
 .list-devices tbody tr:hover {
     background-color: #f9f9f9;
-    transform: translateX(4px); 
+    transform: translateX(4px);
 }
 
 .list-devices td {
     color: #333;
     font-size: 15px;
 }
-
 
 .list-devices tbody tr:first-child td:first-child {
     border-top-left-radius: 12px;
@@ -62,6 +94,18 @@
 }
 .list-devices tbody tr:last-child td:last-child {
     border-bottom-right-radius: 12px;
+}
+
+@media (max-width: 768px) {
+    .list-devices table {
+        width: 100%;
+    }
+
+    .list-devices th,
+    .list-devices td {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
 }
 
 
