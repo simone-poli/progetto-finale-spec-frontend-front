@@ -108,4 +108,114 @@
     }
 }
 
+/* Container principale */
+.task-details-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Titolo principale */
+.task-details-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #1f2937; /* grigio scuro */
+    text-align: center;
+}
+
+/* Sezioni di dettaglio */
+.task-details-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border-left: 4px solid #4f46e5; /* lilla/blu viola */
+    transition: transform 0.2s;
+}
+
+.task-details-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Etichette */
+.task-details-section label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 5px;
+    color: #374151;
+}
+
+/* Valori */
+.task-details-section p {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #1f2937;
+}
+
+/* Pulsanti */
+.task-details-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.task-details-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.task-details-buttons button:hover {
+    transform: translateY(-2px);
+}
+
+.task-details-buttons .edit-btn {
+    background-color: #4f46e5;
+    color: white;
+}
+
+.task-details-buttons .edit-btn:hover {
+    background-color: #4338ca;
+}
+
+.task-details-buttons .delete-btn {
+    background-color: #ef4444;
+    color: white;
+}
+
+.task-details-buttons .delete-btn:hover {
+    background-color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .task-details-container {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .task-details-section {
+        padding: 12px;
+    }
+
+    .task-details-buttons {
+        flex-direction: column;
+    }
+
+    .task-details-buttons button {
+        width: 100%;
+    }
+}
+
 

@@ -8,22 +8,22 @@ function App() {
 
   return (
     <>
-    <GlobalProvider>
-     
       <BrowserRouter>
-        <Routes>
+        <GlobalProvider>
+
+          <Routes>
 
 
 
-          <Route path="/" element={<DeviceList />} />
-          <Route path="/:id" element={<SingleDevicePage />} />
+            <Route path="/" element={<DeviceList />} />
+            <Route path="/devices/:id" element={<SingleDevicePage />} />
 
 
 
-        </Routes>
+          </Routes>
+
+        </GlobalProvider>
       </BrowserRouter>
-
-    </GlobalProvider>
     </>
   )
 }

@@ -2,7 +2,7 @@ import { useContext, useState, useMemo, useCallback } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import DeviceRow from "../components/DeviceRow";
 
-
+// debounce della ricerca per titolo con un delay di attesa
 function debounce(callback, delay) {
   let timer;
   return (value) => {
@@ -25,6 +25,7 @@ export default function DeviceList() {
 
   const categories = useMemo(() => ["", ...new Set(devices.map(d => d.category))], [devices]);
 
+  // ordinamento in ordine alfabetico e per categorie
   const filteredDevices = useMemo(() => {
     let result = devices.filter(device => {
       const matchesTitle = device.title.toLowerCase().includes(searchTitle.toLowerCase());
