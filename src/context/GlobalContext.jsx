@@ -14,8 +14,18 @@ export function GlobalProvider ({children}) {
         .catch (error => console.error(error))
     },[])
 
+    const getDeviceById = async (id) => {
+    const res = await fetch(`${VITE_API_URL}/devices/${id}`)
+    if (!res.ok) throw new Error("Device not found")
+    const data = await res.json()
+    return data.device 
+}
+
+
+
+
     return (
-        <GlobalContext.Provider value={{devices, setDevices}}>
+        <GlobalContext.Provider value={{devices, setDevices, getDeviceById}}>
                 {children}
         </GlobalContext.Provider>
     )

@@ -198,24 +198,5 @@
     background-color: #dc2626;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .task-details-container {
-        padding: 20px;
-        margin: 20px;
-    }
-
-    .task-details-section {
-        padding: 12px;
-    }
-
-    .task-details-buttons {
-        flex-direction: column;
-    }
-
-    .task-details-buttons button {
-        width: 100%;
-    }
-}
 
 

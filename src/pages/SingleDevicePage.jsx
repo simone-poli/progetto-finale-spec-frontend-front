@@ -1,15 +1,21 @@
-import { useParams, useNavigate } from "react-router-dom"
-import { useContext } from "react"
+import { useParams } from "react-router-dom"
+import { useContext, useEffect, useState } from "react"
 import { GlobalContext } from "../context/GlobalContext"
 
 export default function SingleDevicePage() {
 
     const { id } = useParams()
-    const { devices } = useContext(GlobalContext)
-    const navigate = useNavigate()
-    const device = devices.find(d => d.id === parseInt(id))
+    const { getDeviceById } = useContext(GlobalContext)
+    
+    const [singleDevice, setSingleDevice] = useState(null)
 
-    if (!device) {
+    useEffect(() => {
+        getDeviceById(id).then(setSingleDevice)
+    },[])
+
+    console.log(singleDevice)
+
+    if (!singleDevice) {
         return (
             <h2>Device does not exist</h2>
         )
@@ -21,32 +27,32 @@ export default function SingleDevicePage() {
 
             <div className="task-details-section">
                 <label>Title</label>
-                <p>{device.title}</p>
+                <p>{singleDevice.title}</p>
             </div>
 
             <div className="task-details-section">
                 <label>Category</label>
-                <p>{device.category}</p>
+                <p>{singleDevice.category}</p>
             </div>
 
             <div className="task-details-section">
                 <label>Brand</label>
-                <p>{device.brand}</p>
+                <p>{singleDevice.brand}</p>
             </div>
 
             <div className="task-details-section">
                 <label>Price</label>
-                <p>{device.price}€</p>
+                <p>{singleDevice.price}€</p>
             </div>
 
             <div className="task-details-section">
                 <label>Ram</label>
-                <p>{device.ram}</p>
+                <p>{singleDevice.ram}</p>
             </div>
 
             <div className="task-details-section">
                 <label>Storage</label>
-                <p>{device.storage}</p>
+                <p>{singleDevice.storage}</p>
             </div>
         </div>
     )
