@@ -69,6 +69,9 @@ export default function DeviceList() {
       <table>
         <thead>
           <tr>
+            <th>
+              
+            </th>
             <th
               onClick={() => {
                 if (sortField === "title") setSortOrder(sortOrder * -1);
@@ -77,7 +80,7 @@ export default function DeviceList() {
                   setSortOrder(1);
                 }
               }}
-              style={{ cursor: "pointer" }}
+              
             >
               Title {sortField === "title" ? (sortOrder === 1 ? "▲" : "▼") : ""}
             </th>
@@ -89,7 +92,7 @@ export default function DeviceList() {
                   setSortOrder(1);
                 }
               }}
-              style={{ cursor: "pointer" }}
+              
             >
               Category {sortField === "category" ? (sortOrder === 1 ? "▲" : "▼") : ""}
             </th>

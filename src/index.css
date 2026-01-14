@@ -47,6 +47,10 @@
     overflow: hidden;
 }
 
+th {
+    cursor: pointer;
+}
+
 .list-devices thead {
     background: linear-gradient(90deg, #4CAF50, #2E7D32);
     color: #fff;
@@ -96,19 +100,8 @@
     border-bottom-right-radius: 12px;
 }
 
-@media (max-width: 768px) {
-    .list-devices table {
-        width: 100%;
-    }
 
-    .list-devices th,
-    .list-devices td {
-        padding: 10px 15px;
-        font-size: 14px;
-    }
-}
 
-/* Container principale */
 .task-details-container {
     max-width: 800px;
     margin: 40px auto;
@@ -120,21 +113,21 @@
     color: #333;
 }
 
-/* Titolo principale */
+
 .task-details-container h1 {
     font-size: 2rem;
     margin-bottom: 20px;
-    color: #1f2937; /* grigio scuro */
+    color: #1f2937; 
     text-align: center;
 }
 
-/* Sezioni di dettaglio */
+
 .task-details-section {
     margin-bottom: 20px;
     padding: 15px;
     background-color: #ffffff;
     border-radius: 8px;
-    border-left: 4px solid #4f46e5; /* lilla/blu viola */
+    border-left: 4px solid #4f46e5; 
     transition: transform 0.2s;
 }
 
@@ -143,7 +136,6 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
-/* Etichette */
 .task-details-section label {
     font-weight: 600;
     display: block;
@@ -151,14 +143,14 @@
     color: #374151;
 }
 
-/* Valori */
+
 .task-details-section p {
     margin: 0;
     font-size: 1.05rem;
     color: #1f2937;
 }
 
-/* Pulsanti */
+
 .task-details-buttons {
     display: flex;
     justify-content: center;
@@ -198,5 +190,38 @@
     background-color: #dc2626;
 }
 
+.star {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #facc15;
+    user-select: none;
+}
 
+.star:hover {
+    transform: scale(1.2);
+}
 
+.star.active {
+    color: #f59e0b;
+}
+
+.navbar {
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #f3f4f6;
+}
+
+.favorites-btn {
+    padding: 8px 15px;
+    background-color: #facc15;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.favorites-btn:hover {
+    background-color: #f59e0b;
+    color: white;
+}

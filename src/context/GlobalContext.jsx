@@ -6,6 +6,11 @@ export const GlobalContext = createContext()
 export function GlobalProvider ({children}) {
 
     const [devices, setDevices] = useState([])
+    const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [] )
+
+    useEffect(() => {
+        localStorage.setItem("favorites", JSON.stringify(favorites))
+    }, [favorites])
 
     useEffect (() => {
         fetch(`${VITE_API_URL}/devices`)
@@ -21,11 +26,15 @@ export function GlobalProvider ({children}) {
     return data.device 
 }
 
+    const toggleFavorites = (id) => {
+        setFavorites(prev => prev.includes(id) ? prev.filter(favId => favId !== id): [...prev,id]) 
+    }
+
 
 
 
     return (
-        <GlobalContext.Provider value={{devices, setDevices, getDeviceById}}>
+        <GlobalContext.Provider value={{devices, setDevices, getDeviceById, toggleFavorites, favorites}}>
                 {children}
         </GlobalContext.Provider>
     )
