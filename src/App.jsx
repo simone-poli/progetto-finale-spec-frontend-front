@@ -4,6 +4,7 @@ import SingleDevicePage from "./pages/SingleDevicePage"
 import { GlobalProvider } from "./context/GlobalContext"
 import FavoritesPage from "./pages/FavoritesPage"
 import { Navbar } from "./components/NavBar"
+import { ComparePage } from "./pages/ComparePage"
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
             <Route path="/" element={<DeviceList />} />
             <Route path="/devices/:id" element={<SingleDevicePage />} />
             <Route path="/favorites" element={<FavoritesPage />} />
-
+            <Route path="/compare" element={<ComparePage />} />
 
           </Routes>
 

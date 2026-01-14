@@ -7,6 +7,7 @@ export function GlobalProvider ({children}) {
 
     const [devices, setDevices] = useState([])
     const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem("favorites")) || [] )
+    const [compare, setCompare] = useState([])
 
     useEffect(() => {
         localStorage.setItem("favorites", JSON.stringify(favorites))
@@ -30,11 +31,22 @@ export function GlobalProvider ({children}) {
         setFavorites(prev => prev.includes(id) ? prev.filter(favId => favId !== id): [...prev,id]) 
     }
 
+    const toggleCompare = (id) => {
+        setCompare( prev => {
+            if (prev.includes(id)) {
+                return prev.filter(cId => cId !== id)
+            }
+            if (prev.length === 2){
+                return prev
+            }
+            return [...prev,id]
+        })
+    }
 
 
 
     return (
-        <GlobalContext.Provider value={{devices, setDevices, getDeviceById, toggleFavorites, favorites}}>
+        <GlobalContext.Provider value={{devices, setDevices, getDeviceById, toggleFavorites, favorites, toggleCompare, compare}}>
                 {children}
         </GlobalContext.Provider>
     )
